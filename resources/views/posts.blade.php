@@ -9,5 +9,4 @@
         @endif
 
     </main>
-
 </x-layout>
