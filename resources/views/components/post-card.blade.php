@@ -13,11 +13,11 @@
 
                 <div class="mt-4">
                     <h1 class="text-3xl">
-                        This is a big title and it will look great on two or even three lines. Wooohoo!
+                        {{ $post->title }}
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                        Published <time>1 day ago</time>
+                        Published <time>{{ $post->created_at->diffForHumans() }}</time>
                     </span>
                 </div>
             </header>
@@ -30,13 +30,12 @@
                 <div class="flex items-center text-sm">
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="ml-3">
-                        <h5 class="font-bold">Lary Laracore</h5>
-                        <h6>Mascot at Laracasts</h6>
+                        <h5 class="font-bold"><a href="/?author={{ $post->author->username }}">{{ $post->author->name }}</a></h5>
                     </div>
                 </div>
 
                 <div>
-                    <a href="#" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">Read More</a>
+                    <a href="/posts/{{ $post->slug }}" class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">Read More</a>
                 </div>
             </footer>
         </div>
