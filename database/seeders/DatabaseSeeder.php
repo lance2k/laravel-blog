@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // Post::truncate();
         // Category::truncate();
 
-        Post::factory(10)->create();
+        Post::factory(100)->create();
 
         // $user = User::factory()->create();
 
