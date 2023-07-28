@@ -11,7 +11,7 @@ class PostController extends Controller
     public function index()
     {
         return view('posts.index', [
-            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(6)->withQueryString(),
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(18)->withQueryString(),
         ]);
     }
     public function show(Post $post)
@@ -19,5 +19,9 @@ class PostController extends Controller
         return view('posts.show', [
             'post' =>  $post
         ]);
+    }
+    public function create()
+    {
+        return view('posts.create');
     }
 }
